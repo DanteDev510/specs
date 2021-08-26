@@ -57,11 +57,11 @@ The implementation of Dante Network includes the following key technologies:
 
 #### Technical Requirements
 
-Dante Privacy Storage will provide privacy protection for the stored data and related user identities. When users publish storage orders on Dante Network, they need to ensure that the relevant Token flow, order amount, identity on the chain, and data content are not publicly known. At the same time, it is necessary to ensure the enforceability of storage tasks.
+Dante Privacy Storage will provide privacy protection for the stored data and related user identities. When users publish storage orders on Dante Network, they need to ensure that the identity on the chain, and data content are not publicly known. At the same time, it is necessary to ensure the enforceability of storage tasks.
 
 #### Purpose 
 
-In the aspect of storing the order, in the process of requesting the release of the order, the anonymous protection of the identity of the requester and the hiding of the amount of the order are provided. On the basis of not exposing the original information related to the order, the transaction process of the order can be verified on the chain; In the aspect of data storage, a decentralized encryption mechanism is provided for the request node to ensure the privacy of the stored data.
+In the aspect of storing the order, in the process of requesting the release of the order, the anonymous protection of the identity of the requester and hide data content. On the basis of not exposing the original information related to the order, the transaction process of the order can be verified on the chain; In the aspect of data storage, a decentralized encryption mechanism is provided for the request node to ensure the privacy of the stored data.
 
 #### Technical Architecture
 
@@ -199,7 +199,7 @@ The implementation principle of the cross-chain mechanism at this stage is as fo
 
         1. The source chain's cross-chain message contracts selects the message carrier (that is, the cross-chain node) based on the selection strategy, and publishes the message;
         2. The cross-chain node obtains the message from the source chain message contracts and "forwards" it to the target chain. There may be multiple target chains, which are designated by the source chain message publisher;
-        3. The "forwarded" message is submitted to the cross-chain data verification contracts on the target chain, data verification is performed based on multi-source data verification technology, the verified data is submitted, the cross-chain execution is completed, and the result of the execution is judged. The ruling result is submitted  to the cross-chain node credibility evaluation contracts;
+        3. The "forwarded" message is submitted to the cross-chain data verification contracts on the target chain, data verification is performed based on multi-source data verification technology, the verified data is submitted, the cross-chain execution is completed. Finally, the node that execute cross-chain messages will be evaluated, and evaluation result will be submitted  to the cross-chain node credibility evaluation contracts;
         4. The cross-chain node credibility evaluation contracts evaluates and updates the credibility of the node based on the completion of the cross-chain execution of each node, and awards the cross-chain node based on the results of each execution.
     3. The third stage adopts verifiable computing(Avalanche verifiable computing infrastructure, Dante zero-knowledge proof), the technical principle is as follows:
 
